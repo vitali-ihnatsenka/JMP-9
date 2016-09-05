@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by Vitali on 04.09.2016.
@@ -27,7 +28,7 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public Reservation getByDate(LocalDate date) {
+    public List<Reservation> getByDate(LocalDate date) {
         return reservationDao.getByDate(date);
     }
 

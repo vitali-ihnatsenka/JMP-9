@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 /**
  * Created by Vitali on 04.09.2016.
@@ -18,6 +17,7 @@ public class AppConfig {
     private static final String PERSON_LAST_NAME = "Ivanov";
     private static final String DEAFULT_PLACE = "Gomel";
     private static final int DEFAULT_PRICE = 100;
+    private static int currentId = 0;
 
     @Bean
     @Scope("prototype")
@@ -29,7 +29,7 @@ public class AppConfig {
     @Scope("prototype")
     public Reservation getReservation(){
         Reservation reservation = new Reservation();
-        reservation.setId(UUID.randomUUID().toString());
+        reservation.setId(String.valueOf(currentId++));
         reservation.setName("Reservation_" + reservation.getId());
         reservation.setDateTime(LocalDateTime.now());
         reservation.setPlace(DEAFULT_PLACE);
