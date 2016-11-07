@@ -37,3 +37,9 @@
 Информацию можно хранить в памяти, в базе данных или файле.
 Клиента оформить по желанию.
 Можно использовать любой сервер приложений или контейнер сервлетов.
+
+Use your existing application and cover functionality by unit tests - dao and services.
+
+Implement JUnit test and cover all service API methods
+
+Implement mock object for DAO using any mocking framework
